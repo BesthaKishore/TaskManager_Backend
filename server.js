@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import cors from "cors";
 import ConnectDb from './config/mogodb.js';
 import taskRoutes from "./routes/taskRoutes.js"
+import { model } from 'mongoose';
 
 // Load env variables
 dotenv.config();
@@ -33,3 +34,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
+module.exports = app;
